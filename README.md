@@ -25,7 +25,7 @@ terraform apply
 Enter yes when prompted to confirm the deployment.
 
 
-Module Inputs
+#Module Inputs
 •	name: The name of the resource.
 •	environment: The environment in which the resource exists.
 •	label_order: The order in which labels should be applied.
@@ -34,14 +34,14 @@ Module Inputs
 •	extra_tags: Extra tags to be applied.
 
 
-Module Outputs
+#Module Outputs
 •	The module outputs any relevant information about the deployed resources.
 
-Cleanup
+#Cleanup
 To destroy the deployed resources, run:
 Terraform destroy 
 Enter yes when prompted to confirm the destruction.
 
- License
+ #License
  This Terraform module is licensed under the MIT License - see the LICENSE file for details.
 

@@ -1,4 +1,4 @@
-# terraform-azure-labels
+# Terraform-azure-labels
 
 This Terraform configuration deploys an Azure module to manage resource labels.
 

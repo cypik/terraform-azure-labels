@@ -1,36 +1,23 @@
 # Terraform Infrastructure as Code (IaC) - Azure Labels Module
 
 ## Table of Contents
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
 - [Usage](#usage)
 - [Module Inputs](#module-inputs)
 - [Module Outputs](#module-outputs)
 - [Authors](#authors)
 - [License](#license)
 
-## Overview
+## Introduction
 This Terraform module creates structured labels for Azure resources with specific attributes.
-
-## Prerequisites
-- [Terraform](https://www.terraform.io/downloads.html) installed
-- Azure subscription and credentials set up
 
 ## Usage
 
-1. Ensure you have the required provider configured in your Terraform environment.
-
-    ```hcl
-    provider "azurerm" {
-      features {}
-    }
-    ```
-
-2. Use the module by referencing its source and providing the required variables.
+- Use the module by referencing its source and providing the required variables.
 
     ```hcl
     module "labels" {
-      source        = "./../"  # Update with the correct path to the module
+      source        = "git::https://github.com/opz0/terraform-azure-labels.git?ref=v1.0.0"  # Update with the correct path to the module
       name          = "app"
       environment   = "test"
       label_order   = ["name", "environment"]
@@ -41,8 +28,7 @@ This Terraform module creates structured labels for Azure resources with specifi
       }
     }
     ```
-
-3. Run `terraform init` and `terraform apply` to apply labels to Azure resources.
+Please ensure you specify the correct 'source' path for the module.
 
 ## Module Inputs
 
@@ -54,12 +40,14 @@ This Terraform module creates structured labels for Azure resources with specifi
 - `extra_tags`: Extra tags to associate with the resource.
 
 ## Module Outputs
-
 - This module currently does not provide any outputs.
 
+# Examples
+For detailed examples on how to use this module, please refer to the 'examples' directory within this repository.
+
 ## Authors
-- [Your Name]
-- [Co-author's Name, if applicable]
+Your Name
+Replace '[License Name]' and '[Your Name]' with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/opz0/terraform-azure-labels/blob/README/LICENSE.txt) file for details.

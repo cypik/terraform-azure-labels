@@ -58,9 +58,6 @@ This Terraform module creates structured labels for Azure resources with specifi
 
 - This module currently does not provide any outputs.
 
-## Contributing
-Feel free to contribute by opening issues or submitting pull requests. Your feedback and collaboration are welcome!
-
 ## Authors
 - [Your Name]
 - [Co-author's Name, if applicable]

@@ -6,7 +6,6 @@
 - [Usage](#usage)
 - [Module Inputs](#module-inputs)
 - [Module Outputs](#module-outputs)
-- [Contributing](#contributing)
 - [Authors](#authors)
 - [License](#license)
 

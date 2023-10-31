@@ -1,48 +1,56 @@
 # terraform-azure-labels
-# Terraform-azure-labels
-This Terraform configuration deploys an Azure module to manage resource labels.
+# Terraform Infrastructure as Code (IaC) - Azure Module
+
+## Overview
+This Terraform module deploys and configures Azure resources, providing a standardized way to manage infrastructure components.
 
 ## Prerequisites
-
-Before you begin, ensure you have the following:
-
-1. [Terraform] installed.
-2. Azure CLI configured with the necessary permissions.
+- [Terraform](https://www.terraform.io/downloads.html) installed
+- Azure subscription and credentials set up
 
 ## Usage
 
-Clone this repository:
+1. Ensure you have the required providers configured in your Terraform environment.
 
-   ```bash
-   git clone <repository_url>
-   cd <repository_directory>
-```
-1.	Initialize your Terraform configuration:
-terraform init
+    ```hcl
+    provider "azurerm" {
+      features {}
+    }
+    ```
 
-2.	Review and modify the main.tf file to customize the module settings.
-3.	Apply the Terraform configuration:
-terraform apply
-Enter yes when prompted to confirm the deployment.
+2. Use the module by referencing its source and providing the required variables.
+
+    ```hcl
+    module "labels" {
+      source        = "./../"  # Update with the correct path to the module
+    
+      name          = "app"
+      environment   = "test"
+      label_order   = ["name", "environment"]
+      business_unit = "Corp"
+      attributes    = ["private"]
+      extra_tags = {
+        Application = "Demo"
+      }
+    }
+    ```
+
+3. Run `terraform init` and `terraform apply` to deploy the resources.
+
+## Module Inputs
+
+- `name`: The name of the application.
+- `environment`: The environment (e.g., "test", "production").
+- `label_order`: The order in which labels should be applied.
+- `business_unit`: The business unit associated with the application.
+- `attributes`: Additional attributes for resource configuration.
+- `extra_tags`: Extra tags to apply to the Azure resources.
+
+## Module Outputs
+
+- This module currently does not provide any outputs.
 
 
-# Module Inputs
-- name: The name of the resource.
-- environment: The environment in which the resource exists.
-- label_order: The order in which labels should be applied.
-- business_unit: The business unit associated with the resource.
-- attributes: Additional attributes for the resource.
-- extra_tags: Extra tags to be applied.
-
-
-# Module Outputs
-- The module outputs any relevant information about the deployed resources.
-
-# Cleanup
-To destroy the deployed resources, run:
-Terraform destroy 
-Enter yes when prompted to confirm the destruction.
-
- # License
- This Terraform module is licensed under the MIT License - see the [LICENSE]( https://github.com/opz0/terraform-azure-labels/blob/README/LICENSE.txt) file for details.
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/opz0/terraform-azure-labels/blob/README/LICENSE.txt) file for details.
 

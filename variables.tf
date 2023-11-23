@@ -12,7 +12,7 @@ variable "environment" {
 
 variable "repository" {
   type        = string
-  default     = "https://github.com/cypik/terraform-azure-labels.git"
+  default     = "https://github.com/cypik/terraform-azure-labels"
   description = "Terraform current module repo"
 }
 

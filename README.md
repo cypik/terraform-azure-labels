@@ -15,9 +15,9 @@ This Terraform module creates structured labels for Azure resources with specifi
 
 - Use the module by referencing its source and providing the required variables.
 
-    ```hcl
+```hcl
     module "labels" {
-      source        = "git::https://github.com/opz0/terraform-azure-labels.git?ref=v1.0.0"  # Update with the correct path to the module
+      source        = "git::https://github.com/cypik/terraform-azure-labels.git?ref=v1.0.0"  # Update with the correct path to the module
       name          = "app"
       environment   = "test"
       label_order   = ["name", "environment"]
@@ -27,7 +27,7 @@ This Terraform module creates structured labels for Azure resources with specifi
         Application = "Demo"
       }
     }
-    ```
+```
 Please ensure you specify the correct 'source' path for the module.
 
 ## Module Inputs
@@ -50,6 +50,6 @@ Your Name
 Replace '[License Name]' and '[Your Name]' with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/opz0/terraform-azure-labels/blob/README/LICENSE.txt) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/cypik/terraform-azure-labels/blob/master/LICENSE) file for details.
 
 

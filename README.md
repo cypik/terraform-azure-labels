@@ -7,7 +7,7 @@
 - [License](#license)
 - [Inputs](#inputs)
 - [Outputs](#outputs)
-- 
+-
 ## Introduction
 This Terraform module creates structured labels for Azure resources with specific attributes.
 

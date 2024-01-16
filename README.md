@@ -5,17 +5,18 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Usage](#usage)
+- [Examples](#examples)
 - [Authors](#authors)
 - [License](#license)
 - [Inputs](#inputs)
 - [Outputs](#outputs)
--
+
 ## Introduction
 This Terraform module creates structured labels for Azure resources with specific attributes.
 
 ## Usage
 
-- Use the module by referencing its source and providing the required variables.
+ Use the module by referencing its source and providing the required variables.
 ## Example: labels
 ```hcl
     module "labels" {

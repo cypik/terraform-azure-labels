@@ -1,4 +1,6 @@
-# Terraform Infrastructure as Code (IaC) - Azure Labels Module
+# Terraform-azure-labels
+
+# Terraform azure Cloud lables Module
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -14,7 +16,7 @@ This Terraform module creates structured labels for Azure resources with specifi
 ## Usage
 
 - Use the module by referencing its source and providing the required variables.
-
+## Example: labels
 ```hcl
     module "labels" {
       source        = "cypik/labels/azure"
@@ -32,7 +34,7 @@ This Terraform module creates structured labels for Azure resources with specifi
 Please ensure you specify the correct 'source' path for the module.
 
 # Examples
-For detailed examples on how to use this module, please refer to the '[example](https://github.com/cypik/terraform-azure-labels/blob/master/_example)' directory within this repository.
+For detailed examples on how to use this module, please refer to the [example](https://github.com/cypik/terraform-azure-labels/blob/master/_example) directory within this repository.
 
 ## Authors
 Your Name
@@ -73,7 +75,7 @@ No resources.
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
 | <a name="input_extra_tags"></a> [extra\_tags](#input\_extra\_tags) | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(string)` | `{}` | no |
-| <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] . | `list(any)` | `[]` | no |
+| <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
 | <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'cypik'. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/cypik/terraform-azure-labels"` | no |

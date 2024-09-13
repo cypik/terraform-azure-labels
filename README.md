@@ -21,15 +21,17 @@ This Terraform module creates structured labels for Azure resources with specifi
 ```hcl
     module "labels" {
       source        = "cypik/labels/azure"
-      version       = "1.0.1"
+      version       = "1.0.2"
       name          = "app"
       environment   = "test"
       label_order   = ["name", "environment"]
       business_unit = "Corp"
       attributes    = ["private"]
+      repository    = "https://github.com/cypik/terraform-azure-labels"
+      managedby     = "info@cypik.com"
       extra_tags = {
-        Application = "Demo"
-      }
+      Application = "Demo"
+  }
     }
 ```
 Please ensure you specify the correct 'source' path for the module.
@@ -51,8 +53,8 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6.6 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.87.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.5 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 4.2.0 |
 
 ## Providers
 
@@ -77,7 +79,7 @@ No resources.
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
 | <a name="input_extra_tags"></a> [extra\_tags](#input\_extra\_tags) | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(string)` | `{}` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'cypik'. | `string` | `"cypik"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'info@cypik.com' | `string` | `"info@cypik.com"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/cypik/terraform-azure-labels"` | no |
 
